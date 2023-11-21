@@ -23,23 +23,25 @@ dependencies:
 
 calling first class
 ```dart
-final fs = FirebaseUtilitas()
+final fs = FirebaseUtilitas();
 ```
 
-### add in firestore
+## Firestore
+
+### add
 ```dart
 await fs.addDataCollection("collection_name", {
 "name": "ucup",
 "address": "makassar"
-})
+});
 ```
 
-### get data all future in firestore
+### get data all future
 ```dart
-await fs.getDataCollection("collection_name")
+await fs.getDataCollection("collection_name");
 ```
 
-### get data all stream in firestore
+### get data all stream
 ```dart
 StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
         stream: fs.getDataStreamCollection("collection_name"),
@@ -58,15 +60,36 @@ StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
               );
 ```
 
-### update data in firestore
+### update data
 ```dart
 await fs.updateDataAllDoc("collection_name", "id", {
 "name": "shamil",
 "address": "gowa"
-})
+});
 ```
 
-### delete data in firestore
+### delete data
 ```dart
-await fs.deleteDoc("collection_name", "id")
+await fs.deleteDoc("collection_name", "id");
 ```
+
+## Firebase Auth
+
+### register with email and password
+```dart
+await fs.registerWithEmailAndPassword("email", "password");
+```
+
+### sign in with email and password
+```dart
+await fs.signInWithEmailAndPassword("email", "password");
+```
+
+### sign in with email and password
+```dart
+await fs.resetPassword("email");
+```
+
+
+
+
