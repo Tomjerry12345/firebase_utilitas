@@ -1,5 +1,7 @@
 name: firebase_utilitas
-description: "This package is to simplify firebase commands: crud firestore, firebase storage for uploading files."
+description: "This package is to simplify firebase commands: crud firestore, 
+firebase storage for uploading files, 
+firebase auth: siginWithEmailAndPassword, registerWithEmailAndPassword, send email reset password , send email verification"
 version: 0.0.1
 homepage: https://github.com/Tomjerry12345
 

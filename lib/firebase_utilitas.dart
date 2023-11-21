@@ -5,7 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 // ignore: depend_on_referenced_packages
 import 'package:path/path.dart';
 
-class FirebaseServices {
+class FirebaseUtilitas {
   final _db = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
