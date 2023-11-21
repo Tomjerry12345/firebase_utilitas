@@ -11,29 +11,62 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+In your pubspec.yaml
+```dart
+dependencies:
+  firebase_utilitas: ^0.0.1
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
+calling first class
 ```dart
-const like = 'sample';
+final fs = FirebaseUtilitas()
 ```
 
-## Additional information
+### add in firestore
+```dart
+await fs.addDataCollection("collection_name", {
+"name": "ucup",
+"address": "makassar"
+})
+```
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### get data all future in firestore
+```dart
+await fs.getDataCollection("collection_name")
+```
+
+### get data all stream in firestore
+```dart
+StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+        stream: fs.getDataStreamCollection("collection_name"),
+        builder: (context, snapshot) {
+          final data = snapshot.data!.docs;
+           ListView.builder(
+              shrinkWrap: true,
+              itemCount: data.length,
+              itemBuilder: (BuildContext context, int index) {
+              return Column(
+                 children: [
+                  ListTile(
+                    title: Text(data[index]["name"])),
+                  Divider(),
+                ],
+              );
+```
+
+### update data in firestore
+```dart
+await fs.updateDataAllDoc("collection_name", "id", {
+"name": "shamil",
+"address": "gowa"
+})
+```
+
+### delete data in firestore
+```dart
+await fs.deleteDoc("collection_name", "id")
+```
