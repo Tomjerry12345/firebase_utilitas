@@ -1,6 +1,6 @@
 name: firebase_utilitas
 description: "A package streamlining Firebase tasks: Firestore CRUD operations, file uploads to Firebase Storage, and Firebase Auth functions including email sign-in, registration, password reset, and email verification"
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/Tomjerry12345/firebase_utilitas
 license: MIT
 
