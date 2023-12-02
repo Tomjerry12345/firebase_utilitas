@@ -16,7 +16,7 @@ and the Flutter guide for
 In your pubspec.yaml
 ```dart
 dependencies:
-  firebase_utilitas: ^0.0.1
+  firebase_utilitas: ^latest-version
 ```
 
 ## Usage
